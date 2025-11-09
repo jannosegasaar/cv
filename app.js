@@ -7,11 +7,15 @@ targetImage.addEventListener('click', () => {
     targetImage.style.opacity = '0';
 
     setTimeout(() => {
-  i = (i + 1) % images.length;
-  targetImage.src = 'images/' + images[i];
-  targetImage.style.opacity = '1';
-}, 200);
 
+        if (i === images.length - 1) {
+            i = 0;
+        }
 
+        targetImage.src = 'images/' + images[i];
+        i++;
 
+        targetImage.style.opacity = '1';
+
+    }, 200);
 });
